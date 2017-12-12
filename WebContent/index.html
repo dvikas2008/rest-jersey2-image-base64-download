@@ -14,8 +14,6 @@ $(document).ready( function() {
     		contentType: "image/jpg",
     		url: 'http://localhost:8080/jersey2-base64-image-download/rest/download/RoadToDataScientist.jpg',
     		success: function( data ){
-    			$('img_preview').text("ABC");
-
     			$("<img>", {
     			  "src": "data:image/jpeg;base64," + data,
     			  })
