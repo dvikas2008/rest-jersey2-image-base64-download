@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script>
+
+$(document).ready( function() { 
+
+    $("#showImageButton").click(function(){
+    	$.ajax({
+    		type: "GET",
+    		contentType: "image/jpg",
+    		url: 'http://localhost:8080/jersey2-base64-image-download/rest/download/RoadToDataScientist.jpg',
+    		success: function( data ){
+    			$('img_preview').text("ABC");
+
+    			$("<img>", {
+    			  "src": "data:image/jpeg;base64," + data,
+    			  })
+    			.appendTo("#img_preview");
+    		}
+    	});
+    }); 
+
+ });
+
+</script>
+
+</head>
+<body>
+
+	<h1>jersey2-base64-image-download</h1>
+	<div id="img_preview"></div>
+	<button id="showImageButton" type="button">Show Image</button>
+	<br>
+	<br>
+	<b>Powered by <a href="https://tutorial-academy.com">tutorial-academy.com</a> &copy; 2017 - Check out the tutorial <a href="https://tutorial-academy.com/rest-jersey2-image-base64-download">here</a>!</b>
+
+</body>
+</html>
